@@ -1,0 +1,17 @@
+name: Run tests and benchmarks
+
+on:
+    push:
+        branch: [master]
+
+jobs:
+    testbench:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-go@v2
+              with:
+                  go-version: "^1.16.5"
+            - run: |
+                  go run stack
+                  go test -v stack/stack -bench . -benchmem
