@@ -1,8 +1,12 @@
 name: Run tests and benchmarks
 
 on:
+    pull_request:
+        branches:
+            - master
     push:
-        branch: [master]
+        branches:
+            - dev
 
 jobs:
     testbench:
