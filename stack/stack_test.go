@@ -85,6 +85,10 @@ func TestTopAfterTwoPush(t *testing.T) {
 	}
 }
 
+func TestThatFail(t *testing.T) {
+	t.FailNow()
+}
+
 func BenchmarkNewStack(b *testing.B) {
 	for i := 1; i <= b.N; i++ {
 		New()
