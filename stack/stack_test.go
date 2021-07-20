@@ -26,6 +26,15 @@ func TestPopEmpty(t *testing.T) {
 	}
 }
 
+func TestOnePopEmpty(t *testing.T) {
+	mystack := New()
+	mystack.Push(100)
+	mystack.Pop()
+	if mystack.Size() != 0 {
+		t.FailNow()
+	}
+}
+
 func TestOnePushOnePop(t *testing.T){
 	mystack := New()
 	element := 100

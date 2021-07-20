@@ -26,6 +26,7 @@ func (s *Stack) Push(element interface{}) {
 func (s *Stack) Pop() (interface{}, bool) {
 	if s.top >= 0 {
 		element := s.elements[s.top]
+		s.elements = s.elements[:s.top]
 		s.top--
 		return element, true
 	}
